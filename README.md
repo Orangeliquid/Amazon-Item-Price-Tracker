@@ -43,4 +43,5 @@ Configuration
 
 Ensure all environmental variables are set correctly in your configuration before running the script.
 
-
+## License
+This project is licensed under the [MIT License](LICENSE.txt).
