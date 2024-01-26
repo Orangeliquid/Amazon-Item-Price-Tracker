@@ -3,14 +3,14 @@ import smtplib
 import os
 from bs4 import BeautifulSoup
 
-
+# All environmental variables must be set for user in edit config
 AMAZON_ITEM_URL = os.environ["AMAZON_ITEM_URL"]
 USER_AGENT = os.environ["USER_AGENT"]
-ACCEPT_LANG = "en-GB,en;q=0.6"
-TARGET_PRICE = 400
-
 MY_EMAIL = os.environ["MY_EMAIL"]
 MY_APP_PASS = os.environ["MY_APP_PASS"]
+
+ACCEPT_LANG = "en-GB,en;q=0.6"
+TARGET_PRICE = 400
 
 # Web Scraping desired Amazon URL for current price of item
 headers = {
@@ -33,7 +33,7 @@ if item_float_price <= TARGET_PRICE:
         connection.sendmail(
             from_addr=MY_EMAIL,
             to_addrs=MY_EMAIL,
-            msg=f"Subject:Lego Hogwarts Castle On Sale!!"
+            msg=f"Subject:Your tracked item is on sale!!"
                 f"\n\nCurrent price: {item_float_price}"
                 f"\n\nURL: {AMAZON_ITEM_URL}"
                 f"\n\nWill you make the purchase?"
